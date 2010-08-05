@@ -2,3 +2,4 @@
 # update with: svn propset svn:externals -F ./EXTERNALS.txt .
 #
 gdwdoc.skin http://svn.affinitic.be/plone/gites/gdwdoc.skin/trunk
+gdwdoc.pdf http://svn.affinitic.be/plone/gites/gdwdoc.pdf/trunk
