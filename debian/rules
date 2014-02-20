@@ -29,7 +29,6 @@ build:
 	cp -ap ./bootstrap.py $(BUILDDIR)
 	cp -ap ./*.cfg $(BUILDDIR)
 	cd $(BUILDDIR) && virtualenv .
-	rm -rf $(BUILDDIR)/devel
 	rm -f $(BUILDDIR)/buildout.cfg
 	mkdir -p $(BUILDDIR)/eggs
 	cd $(BUILDDIR) && ln -s base.cfg buildout.cfg
@@ -58,7 +57,6 @@ install-website:
 	sed -i s%${BUILDDIR}%${INSTALLDIR}%g ${BUILDDIR}/parts/instance/bin/interpreter
 	sed -i s%${BUILDDIR}%${INSTALLDIR}%g ${BUILDDIR}/parts/instance/etc/zope.conf
 	cp -ap $(BUILDDIR)/bin $(DEBIANCORE)/${INSTALLDIR}
-	cp -ap $(BUILDDIR)/devel $(DEBIANCORE)/${INSTALLDIR}
 	cp -ap $(BUILDDIR)/src $(DEBIANCORE)/${INSTALLDIR}
 	cp -ap $(BUILDDIR)/develop-eggs $(DEBIANCORE)/${INSTALLDIR}
 	find ${BUILDDIR}/develop-eggs -type f -exec sed -i s%${BUILDDIR}%${INSTALLDIR}%g {} \;
